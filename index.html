@@ -1,0 +1,475 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Traders at CMU - Home</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <!-- Updated Google Font for a clean, modern look -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+    <!-- Updated Modal and Popup Styles -->
+    <style>
+      /* The Modal (overlay background) */
+      .modal {
+        display: none; /* Hidden by default */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(161, 148, 148, 0.7); /* Dark overlay */
+        z-index: 1000;
+        /* overflow: auto; */
+      }
+
+      /* When show-flex is added, center the modal-content using flex */
+      .modal.show-flex {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* Unified Modal Content Styling for all pop-ups */
+      .modal-content {
+        /* Deep violet/blue background with improved text contrast */
+        background-color: #2a2a72;
+        color: #ece7db;
+        font-family: 'Open Sans', sans-serif; /* Clean modern font */
+        width: 120%;
+        max-width: 1600px;     /* Slightly narrower for better readability */
+        padding: 30px;         /* Increased padding for breathing room */
+        box-sizing: border-box;
+        position: relative;
+        margin: 0 auto;
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        border-radius: 10px;
+        box-shadow: 0 0 30px rgba(255, 140, 0, 0.5);
+        transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+
+        /* Enhanced readability */
+        font-size: 1.25rem;     /* Slightly larger than 23px */
+        line-height: 1.55;      /* Increased line spacing for comfort */
+        letter-spacing: 0.02em;/* Gentle letter spacing */
+      }
+
+      /* Headings inside modals */
+      .modal-content h2 {
+        font-size: 2.2rem;
+        margin-bottom: 0.5em;
+      }
+
+      /* Paragraphs and list items spacing */
+      .modal-content p,
+      .modal-content li {
+        margin-bottom: 1em;
+      }
+
+      /* The Close Button */
+      .close {
+        color: #f0f0f0;
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        font-size: 32px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      .close:hover,
+      .close:focus {
+        color: #ccc;
+        text-decoration: none;
+      }
+
+      /* Team Modal Specific Styles */
+      #modal-team .team-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 20px;
+      }
+      #modal-team .team-member {
+        width: 180px;
+        text-align: center;
+      }
+      #modal-team .team-member img {
+        width: 100%;
+        height: auto;
+        border: 2px solid #f0f0f0;
+        border-radius: 5px;
+      }
+      #modal-team .team-member p {
+        margin-top: 10px;
+        font-size: 14px;
+        font-weight: bold;
+        font-family: inherit;
+      }
+
+      /* Resources Modal: style the list */
+      #modal-resources ul {
+        list-style-type: disc;
+        margin-left: 20px;
+      }
+      #modal-resources li {
+        margin-bottom: 8px;
+        font-family: inherit;
+      }
+
+      /* Style for the logo */
+      .logo img {
+        width: 100%;
+        height: auto;
+        border-radius: 50%;
+        object-fit: cover;
+        max-width: 150px;
+        max-height: 150px;
+      }
+    </style>
+  </head>
+  <body class="is-preload">
+    <!-- Wrapper -->
+    <div id="wrapper">
+      <!-- Header -->
+      <header id="header">
+        <div class="logo">
+          <img
+            src="images/output-onlinepngtools -gaiatri made.png"
+            alt="Traders at CMU Logo"
+          />
+        </div>
+        <div class="content">
+          <div class="inner">
+            <h1>Traders at CMU</h1>
+            <p>Carnegie Mellon's Premier Trading Club</p>
+          </div>
+        </div>
+
+        <!-- Navigation Bar -->
+        <nav>
+          <ul>
+            <!-- Removed 'Home' and shifted everything left -->
+            <li>
+              <a href="#" class="popup-link" data-modal="modal-about">About</a>
+            </li>
+            <li>
+              <a href="#" class="popup-link" data-modal="modal-team">Team</a>
+            </li>
+            <li>
+              <a href="#" class="popup-link" data-modal="modal-equities"
+                >Equities</a
+              >
+            </li>
+            <li>
+              <a href="#" class="popup-link" data-modal="modal-sports"
+                >Sports Markets</a
+              >
+            </li>
+            <li>
+              <a href="#" class="popup-link" data-modal="modal-crypto"
+                >Crypto</a
+              >
+            </li>
+            <li>
+              <a href="#" class="popup-link" data-modal="modal-resources"
+                >Resources</a
+              >
+            </li>
+            <!-- New 'Contact Us' button at the end -->
+            <li>
+              <a href="#" class="popup-link" data-modal="modal-contact"
+                >Contact Us</a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Apply Now Button -->
+        <div class="apply-now">
+          <a
+            href="https://forms.gle/n6yc4NHXiqbYdAuy6"
+            class="button primary"
+            >Apply Now</a
+          >
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <div id="main">
+        <article id="home">
+          <h2 class="major">Welcome</h2>
+          <span class="image main"
+            ><img src="images/club.jpg" alt="Club Image"
+          /></span>
+          <p>
+            Welcome to Traders at CMU, where we empower Carnegie Mellon students
+            to excel in quantitative finance, algorithmic trading, and fintech
+            innovation. Explore our pages to learn more about our mission, meet
+            our team, and discover our specialized trading groups.
+          </p>
+        </article>
+      </div>
+
+      <!-- Footer -->
+      <footer id="footer">
+        <p class="copyright">
+          &copy; Traders at CMU. Design:
+          <a href="https://html5up.net">HTML5 UP</a>.
+        </p>
+      </footer>
+    </div>
+
+    <!-- Background -->
+    <div id="bg"></div>
+
+    <!-- Modal Popups -->
+
+    <!-- About Modal -->
+    <div id="modal-about" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>About Us</h2>
+        <p>
+          <strong>Traders at CMU</strong> is a student organization committed to uncovering the black box of quantitative finance.
+        <p>
+          The trading industry is a <strong>zero-sum game</strong>. To win, someone must lose. This idea has shaped the industry into a 
+          competitive and secretive place, to the point where passionate minds are struggling to learn.
+        </p>
+          
+        <p>
+          Traders at CMU aims to <strong>teach and to trade</strong>; our goal is to provide an environment for students to 
+          pursue their passion for trading, hone their skills, and apply their ideas in different markets. 
+          We believe in learning by doing—through structured education sessions, different trading teams, and 
+          competitions around campus, our traders gain firsthand experience in algorithmic trading, market structure 
+          and dynamics, and quantitative analysis.
+        </p>
+
+        </p>
+        <p>
+          Ultimately, our mission is to equip every member with the
+          tools, confidence, and network to excel in the world of trading and
+          beyond.
+        </p>
+      </div>
+    </div>
+
+    <!-- Team Modal -->
+    <div id="modal-team" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Team</h2>
+        <div class="team-container">
+          <!-- Team member 1 -->
+          <div class="team-member">
+            <img src="images/shay.jpg" alt="President and Head of Trading" />
+            <p>Akshay Patel</p>
+            <p>President and Head of Trading</p>
+          </div>
+          <!-- Team member 2 -->
+          <div class="team-member">
+            <img src="images/divij.jpg" alt="Head of SWE" />
+            <p>Divij Aswinkumar</p>
+            <p>Head of SWE</p>
+          </div>
+          <!-- Team member 3 -->
+          <div class="team-member">
+            <img src="images/joe.jpg" alt="Head of Research" />
+            <p>Joe DeLuca</p>
+            <p>Head of Research</p>
+          </div>
+          <!-- Team member 4 -->
+          <div class="team-member">
+            <img src="images/gauri.jpg" alt="Head of Growth" />
+            <p>Gauri Sharma</p>
+            <p>Head of Growth</p>
+          </div>
+          <!-- Team member 5 -->
+          <div class="team-member">
+            <img src="images/sid.jpg" alt="Club Advisor" />
+            <p>Siddarth Balaji</p>
+            <p>Club Advisor</p>
+          </div>
+          <!-- Optional: Team member 6 -->
+          <div class="team-member">
+            <img src="images/cheney.jpg" alt="Sports Market Consultant" />
+            <p>Cheney Price</p>
+            <p>Sports Market Consultant</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Equities Modal -->
+    <div id="modal-equities" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Equities Team (Advised by Sid Balaji)</h2>
+        <p>
+          The Equities Team at CMU focuses on identifying and trading
+          opportunities in the stock market, leveraging cutting-edge
+          quantitative methods and rigorous analysis. Our team of students
+          researches a wide array of equities from diverse sectors,
+          continuously refining a systematic approach to trading. Our process
+          begins with the development of robust signals based on fundamental,
+          technical, and alternative data sources. These signals are then
+          subjected to thorough backtesting against historical market
+          conditions to ensure their reliability and effectiveness before any
+          real-world application.
+        </p>
+        <p>
+          Risk management is central to our workflow. We employ sophisticated
+          position-sizing techniques and adopt a disciplined framework to
+          evaluate drawdowns and market volatility. Once strategies are
+          validated, our team implements them through Interactive Brokers,
+          carefully monitoring live performance. By combining academic theory
+          with practical experience, team members gain firsthand knowledge of
+          portfolio construction, execution mechanics, and the intricacies of
+          the global financial markets. Beyond trading, we also emphasize the
+          importance of continuous learning through regular seminars, research
+          presentations, and peer-to-peer mentorship. This collaborative
+          environment helps members stay at the forefront of developments in
+          quantitative finance and ensures that the Equities Team remains
+          highly adaptive and innovative.
+        </p>
+      </div>
+    </div>
+
+    <!-- Sports Markets Modal -->
+    <div id="modal-sports" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Sports Markets Team (Advised by Cheney Price)</h2>
+        <p>
+          The Sports Market Team at CMU specializes in analyzing and
+          participating in various sports-based exchange platforms. Our team
+          focuses on leveraging statistical methods and advanced modeling
+          techniques to project potential outcomes in a wide range of sports
+          events. We gather data from numerous reliable sources, harnessing
+          insights from both macro-level trends and granular game-level
+          details. These insights are used to develop systematic strategies,
+          which are rigorously backtested on historical datasets to ensure
+          robust performance across different market conditions.
+        </p>
+        <p>
+          The team executes trades on platforms like Novig and Sporttrade, where
+          real-time pricing and liquidity require a keen understanding of market
+          dynamics. Each member gains hands-on experience in risk and reward
+          assessment, position sizing, and performance evaluation. Collaboration
+          is key: we hold regular strategy roundtables to discuss emerging
+          sports data, adjust our models, and refine our decision-making
+          processes. Through this combination of theoretical knowledge and
+          practical market exposure, members acquire a deeper appreciation of
+          how quantitative analytics can guide successful trading in sports
+          markets. Our mission is to foster an environment where intellectual
+          curiosity and methodical research converge to drive innovation and
+          consistent results.
+        </p>
+      </div>
+    </div>
+
+    <!-- Crypto Modal -->
+    <div id="modal-crypto" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Crypto Team (Partnered with Carnegie Mellon Blockchain)</h2>
+        <p>
+          The Crypto Team at CMU delves into the rapidly evolving world of
+          digital assets, exploring innovative trading strategies and
+          blockchain-based technologies. Partnered with Carnegie Mellon
+          Blockchain, the team benefits from a vibrant network of industry
+          experts, academic researchers, and fellow enthusiasts who are shaping
+          the future of decentralized finance. Our approach encompasses
+          analyzing both on-chain and off-chain data to uncover market
+          inefficiencies and trends that can lead to profitable strategies.
+        </p>
+        <p>
+          We emphasize a structured research process: team members conceptualize
+          trading signals rooted in blockchain analytics, liquidity assessments,
+          and market psychology. These signals undergo rigorous backtesting
+          across diverse crypto market conditions, ensuring resilience and
+          adaptability. Once strategies are optimized, they are deployed on
+          select cryptocurrency exchanges, with real-time monitoring and ongoing
+          performance evaluations. A core focus is risk management, as
+          cryptocurrency markets can be highly volatile; we employ robust
+          hedging techniques and disciplined stop-loss mechanisms. Education and
+          collaboration are central to our culture—regular workshops cover
+          topics such as decentralized finance (DeFi) protocols, smart contract
+          security, and emerging blockchain applications. By blending academic
+          insights, real-world trading experience, and the supportive ecosystem
+          provided by Carnegie Mellon Blockchain, our Crypto Team stands at the
+          forefront of digital asset innovation.
+        </p>
+      </div>
+    </div>
+
+    <!-- Resources Modal -->
+    <div id="modal-resources" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Resources</h2>
+        <ul>
+          <li><strong>Flash Boys</strong> by Michael Lewis</li>
+          <li><strong>Trade Like a Hedge Fund</strong> by James Altucher</li>
+          <li><strong>Algo Trading</strong> by Ernest P. Chan</li>
+          <li><strong>Time Series Analysis and Its Applications</strong>
+            by Robert H. Shumway</li>
+          <li><strong>Beat the Dealer</strong> by Edward O. Thorp</li>
+          <li><strong>Fooled by Randomness</strong> by Nassim Nicholas Taleb</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Contact Us Modal -->
+    <div id="modal-contact" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Contact Us</h2>
+        <p>
+          Have questions, suggestions, or ideas for collaboration? We’d love to
+          hear from you! Please reach out to us at
+          <a href="mailto:shaypat1@cmu.edu">shaypat1@cmu.edu</a>.
+        </p>
+        <p>
+          We look forward to connecting with you and will do our best to respond
+          as soon as possible. Thank you for your interest in Traders at CMU!
+        </p>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <!-- Modal Popup Script -->
+    <script>
+      $(document).ready(function(){
+        // Show the corresponding modal when a navigation link is clicked
+        $('.popup-link').click(function(e){
+          e.preventDefault();
+          var modalId = $(this).data('modal');
+          // Add show-flex to center the modal-content for all modals
+          $('#' + modalId).addClass('show-flex').hide().fadeIn();
+        });
+
+        // Hide the modal when the close button is clicked
+        $('.close').click(function(){
+          $(this).closest('.modal').removeClass('show-flex').fadeOut();
+        });
+
+        // Hide the modal if the user clicks outside the modal-content
+        $(window).click(function(event) {
+          if ($(event.target).hasClass('modal')) {
+            $(event.target).removeClass('show-flex').fadeOut();
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
