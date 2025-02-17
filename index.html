@@ -41,8 +41,8 @@
         color: #ece7db;
         font-family: 'Open Sans', sans-serif; /* Clean modern font */
         width: 120%;
-        max-width: 1600px;     /* Slightly narrower for better readability */
-        padding: 30px;         /* Increased padding for breathing room */
+        max-width: 1600px; /* Slightly narrower for better readability */
+        padding: 30px; /* Increased padding for breathing room */
         box-sizing: border-box;
         position: relative;
         margin: 0 auto;
@@ -52,9 +52,9 @@
         transition: transform 0.3s ease-out, opacity 0.3s ease-out;
 
         /* Enhanced readability */
-        font-size: 1.25rem;     /* Slightly larger than 23px */
-        line-height: 1.55;      /* Increased line spacing for comfort */
-        letter-spacing: 0.02em;/* Gentle letter spacing */
+        font-size: 1.25rem; /* Slightly larger than 23px */
+        line-height: 1.55; /* Increased line spacing for comfort */
+        letter-spacing: 0.02em; /* Gentle letter spacing */
       }
 
       /* Headings inside modals */
@@ -129,6 +129,24 @@
         max-width: 150px;
         max-height: 150px;
       }
+
+      /* Responsive adjustments for mobile devices */
+      @media (max-width: 768px) {
+        .modal-content {
+          width: 95%;           /* Shrink width for mobile screens */
+          max-width: 95%;       /* Remove fixed max-width */
+          max-height: 90vh;     /* Ensure modal doesn't exceed viewport height */
+          padding: 20px;        /* Reduce padding */
+          overflow-y: auto;     /* Enable vertical scroll if content overflows */
+          box-shadow: 0 0 15px rgba(255, 140, 0, 0.5); /* Optionally adjust shadow */
+        }
+
+        .close {
+          top: 10px;            /* Move closer to the top */
+          right: 10px;          /* Move closer to the right */
+          font-size: 28px;      /* Slightly smaller if needed */
+        }
+      }
     </style>
   </head>
   <body class="is-preload">
@@ -160,30 +178,20 @@
               <a href="#" class="popup-link" data-modal="modal-team">Team</a>
             </li>
             <li>
-              <a href="#" class="popup-link" data-modal="modal-equities"
-                >Equities</a
-              >
+              <a href="#" class="popup-link" data-modal="modal-equities">Equities</a>
             </li>
             <li>
-              <a href="#" class="popup-link" data-modal="modal-sports"
-                >Sports Markets</a
-              >
+              <a href="#" class="popup-link" data-modal="modal-sports">Sports Markets</a>
             </li>
             <li>
-              <a href="#" class="popup-link" data-modal="modal-crypto"
-                >Crypto</a
-              >
+              <a href="#" class="popup-link" data-modal="modal-crypto">Crypto</a>
             </li>
             <li>
-              <a href="#" class="popup-link" data-modal="modal-resources"
-                >Resources</a
-              >
+              <a href="#" class="popup-link" data-modal="modal-resources">Resources</a>
             </li>
             <!-- New 'Contact Us' button at the end -->
             <li>
-              <a href="#" class="popup-link" data-modal="modal-contact"
-                >Contact Us</a
-              >
+              <a href="#" class="popup-link" data-modal="modal-contact">Contact Us</a>
             </li>
           </ul>
         </nav>
@@ -193,8 +201,7 @@
           <a
             href="https://forms.gle/n6yc4NHXiqbYdAuy6"
             class="button primary"
-            >Apply Now</a
-          >
+            >Apply Now</a>
         </div>
       </header>
 
@@ -202,9 +209,9 @@
       <div id="main">
         <article id="home">
           <h2 class="major">Welcome</h2>
-          <span class="image main"
-            ><img src="images/club.jpg" alt="Club Image"
-          /></span>
+          <span class="image main">
+            <img src="images/club.jpg" alt="Club Image" />
+          </span>
           <p>
             Welcome to Traders at CMU, where we empower Carnegie Mellon students
             to excel in quantitative finance, algorithmic trading, and fintech
@@ -235,19 +242,17 @@
         <h2>About Us</h2>
         <p>
           <strong>Traders at CMU</strong> is a student organization committed to uncovering the black box of quantitative finance.
+        </p>
         <p>
           The trading industry is a <strong>zero-sum game</strong>. To win, someone must lose. This idea has shaped the industry into a 
           competitive and secretive place, to the point where passionate minds are struggling to learn.
         </p>
-          
         <p>
           Traders at CMU aims to <strong>teach and to trade</strong>; our goal is to provide an environment for students to 
           pursue their passion for trading, hone their skills, and apply their ideas in different markets. 
           We believe in learning by doing—through structured education sessions, different trading teams, and 
           competitions around campus, our traders gain firsthand experience in algorithmic trading, market structure 
           and dynamics, and quantitative analysis.
-        </p>
-
         </p>
         <p>
           Ultimately, our mission is to equip every member with the
@@ -415,8 +420,9 @@
           <li><strong>Flash Boys</strong> by Michael Lewis</li>
           <li><strong>Trade Like a Hedge Fund</strong> by James Altucher</li>
           <li><strong>Algo Trading</strong> by Ernest P. Chan</li>
-          <li><strong>Time Series Analysis and Its Applications</strong>
-            by Robert H. Shumway</li>
+          <li>
+            <strong>Time Series Analysis and Its Applications</strong> by Robert H. Shumway
+          </li>
           <li><strong>Beat the Dealer</strong> by Edward O. Thorp</li>
           <li><strong>Fooled by Randomness</strong> by Nassim Nicholas Taleb</li>
         </ul>
